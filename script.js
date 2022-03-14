@@ -1,4 +1,4 @@
-console.log("HELLO AND WELCOME TO OUR MIXED MESSAGE GENERATOR. CLICK ON RUN TO SEE A WIDE ARRAY (get it? array) OF MESSAGES.");
+console.log(">>>HELLO AND WELCOME TO OUR MIXED MESSAGE GENERATOR. CLICK ON RUN TO SEE A WIDE ARRAY (get it? array) OF MESSAGES.<<<");
 
 let messageContainer = []
 
@@ -6,7 +6,6 @@ let messageContainer = []
 let subGen = Math.floor(Math.random() * 4)
 let predGen = Math.floor(Math.random() * 3)
 let cityGen = Math.floor(Math.random() * 10)
-
 
 
 //Setting up the subject(noun) and verb
@@ -31,8 +30,8 @@ let subPred = [
         noun: "They",
         verb:[
             {past: 'went to'},
-            {present: 'is going to'},
-            {future: 'will be going'}
+            {present: 'are going to'},
+            {future: 'will be going to'}
         ]
     },
     {//We?
@@ -102,4 +101,19 @@ let city = [
 
 ]
 
-console.log(Math.floor(Math.random() * 4))
+let peopleStr = (subGen, predGen) => {
+    let tense
+    if (predGen === 0) {
+        tense = 'past'
+    }else if (predGen === 1) {
+        tense = 'present'
+    }else if (predGen === 2) {
+        tense = 'future'
+    }
+
+
+    let str = subPred[subGen].noun + ' ' + subPred[subGen].verb[predGen][tense]
+    return str
+}
+
+console.log(peopleStr(subGen, predGen))
