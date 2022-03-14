@@ -115,11 +115,11 @@ let peopleStr = (subGen, predGen) => {
     let str = subPred[subGen].noun + ' ' + subPred[subGen].verb[predGen][tense]
     return str
 }
-// console.log(peopleStr(subGen, predGen))
+
 
 let cityStr = cityGen => cityList[cityGen].city + '. It is located in ' + cityList[cityGen].country + ' and it has a population of ' + cityList[cityGen].population + ' people.'
 
-// console.log(cityStr(cityGen))
+
 
 function strGen(subGen, predGen, cityGen) {
     let firstStr = peopleStr(subGen, predGen);
@@ -131,3 +131,4 @@ function strGen(subGen, predGen, cityGen) {
 }
 
 console.log(strGen(subGen, predGen, cityGen));
+
