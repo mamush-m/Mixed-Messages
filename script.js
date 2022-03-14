@@ -47,10 +47,10 @@ let subPred = [
 
 
 //Setting up the predicate-noun
-let city = [
+let cityList = [
     {
         city: 'London', 
-        country: 'United Kingdom', 
+        country: 'The United Kingdom', 
         population: '10 million'
     },
     {
@@ -65,22 +65,22 @@ let city = [
     },
     {
         city: 'Dubai',
-        country: 'United Arab Emirates (UAE)',
+        country: 'The United Arab Emirates (UAE)',
         population: '3 million'
     },
     {
         city: 'New York City',
-        country: 'United States',
+        country: 'The United States',
         population: '8 million'
     },
     {
         city: 'Washington, DC',
-        country: 'United States',
+        country: 'The United States',
         population: '700 thousand'
     },
     {
         city: 'Los Angeles',
-        country: 'United States',
+        country: 'The United States',
         population: '4 million'
     },
     {
@@ -115,5 +115,19 @@ let peopleStr = (subGen, predGen) => {
     let str = subPred[subGen].noun + ' ' + subPred[subGen].verb[predGen][tense]
     return str
 }
+// console.log(peopleStr(subGen, predGen))
 
-console.log(peopleStr(subGen, predGen))
+let cityStr = cityGen => cityList[cityGen].city + '. It is located in ' + cityList[cityGen].country + ' and it has a population of ' + cityList[cityGen].population + ' people.'
+
+// console.log(cityStr(cityGen))
+
+function strGen(subGen, predGen, cityGen) {
+    let firstStr = peopleStr(subGen, predGen);
+    let lastsStr = cityStr(cityGen);
+
+    let finStr = [firstStr + ' ' + lastsStr];
+
+    return finStr;
+}
+
+console.log(strGen(subGen, predGen, cityGen));
