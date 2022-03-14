@@ -1,0 +1,19 @@
+Randomized Message Ideas
+1. Inspirational quotes
+2. 8-Ball inspired quotes
+3. Places to visit in the world- TOPIC
+4. International Leaders and the capial city.
+
+Implementations
+1. Functions
+2. Iterators
+3. Concatenation
+
+
+
+
+Code material
+Step 1: Generate random numbers
+Step 2: Create list of strings that are sectioned off.
+Step 3: Use the random numbers to iterate through the list of strings.
+Step 4: Log them to the console.
